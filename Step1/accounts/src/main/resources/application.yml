@@ -3,8 +3,8 @@ server:
 spring:
   application:
     name: "accounts"
-#  profiles:
-#    active: "prod"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:mysql://localhost:3306/accountsdb
     username: root
@@ -14,12 +14,6 @@ spring:
   sql:
     init:
       mode: always
+  config:
+    import: "optional:configserver:http://localhost:8071/"
 
-accounts:
-  message: "Welcome to EazyBank accounts related local APIs "
-  contactDetails:
-    name: "John Doe - Developer"
-    email: "john@eazybank.com"
-  onCallSupport:
-    - (555) 555-1234
-    - (555) 523-1345
